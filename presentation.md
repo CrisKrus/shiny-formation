@@ -99,7 +99,7 @@ Applications
 - https://shiny.rstudio.com/gallery/pokemon-questions.html
 - https://shiny.rstudio.com/gallery/
 
-Other stuff
+Other stuff with R
 ========================================================
 
 - Knit
