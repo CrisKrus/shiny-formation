@@ -144,3 +144,25 @@ browsable(tagList(
 [reactR package]: https://github.com/react-R/reactR
 [reactR#examples]: https://github.com/react-R/reactR#examples
 
+
+Can shiny connect to a database?
+========================================================
+
+Yes, we can connect to [SQL Server][connect-to-SQL-Server] for example.
+
+
+```r
+library(odbc)
+con <- dbConnect(odbc(),
+                 Driver = "SQLServer",
+                 Server = "mysqlhost",
+                 Database = "mydbname",
+                 UID = "myuser",
+                 PWD = rstudioapi::askForPassword("Database password")
+                 Port = 1433)
+
+# Using a DSN
+con <- dbConnect(odbc::odbc(), "mydbalias")
+```
+
+[connect-to-SQL-Server]: https://support.rstudio.com/hc/en-us/articles/214510788-Setting-up-R-to-connect-to-SQL-Server-
