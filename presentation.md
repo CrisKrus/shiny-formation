@@ -105,3 +105,42 @@ Other stuff with R
 - Knit
 - Presentations
 - Dinamic papers
+
+Is posisible to use react a shiny application?
+========================================================
+
+As we can read on [this article][integrating-react-js] on the 2019 Rstudio conf they talk about [reactR package]
+
+On the [example][reactR#examples] block in the readme of this project we can read some code on how to use the library.
+
+It looks that is on an early dev phase now.
+
+
+```r
+library(reactR)
+library(htmltools)
+
+browsable(tagList(
+  tags$div(id = "app"),
+  tags$script(
+  "
+    ReactDOM.render(
+      React.createElement(
+        'h1',
+        null,
+        'Powered by React'
+      ),
+      document.getElementById('app')
+    )
+  "
+  ),
+  #add core-js first to work in RStudio Viewer
+  html_dependency_corejs(),
+  html_dependency_react()
+))
+```
+
+[integrating-react-js]: https://rstudio.com/resources/rstudioconf-2019/integrating-react-js-and-shiny/
+[reactR package]: https://github.com/react-R/reactR
+[reactR#examples]: https://github.com/react-R/reactR#examples
+
